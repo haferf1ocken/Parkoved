@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_events">
+
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="android.haferflocken.parkoved.ui.events.EventsFragment"
+        android:label="@string/title_events"
+        tools:layout="@layout/fragment_events" />
+
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="android.haferflocken.parkoved.ui.maps.MapsdFragment"
+        android:label="@string/title_maps"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/navigation_tickets"
+        android:name="android.haferflocken.parkoved.ui.tickets.TicketsFragment"
+        android:label="@string/title_tickets"
+        tools:layout="@layout/fragment_tickets" >
+        <action
+            android:id="@+id/action_navigation_tickets_to_ticketDetailFragment"
+            app:destination="@id/ticketDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="android.haferflocken.parkoved.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/ticketDetailFragment"
+        android:name="android.haferflocken.parkoved.ui.tickets.detail.TicketDetailFragment"
+        android:label="TicketDetailFragment" >
+        <argument
+            android:name="ticketKey"
+            app:argType="long" />
+    </fragment>
+</navigation>
