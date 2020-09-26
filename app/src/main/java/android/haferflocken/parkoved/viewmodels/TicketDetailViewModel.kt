@@ -13,7 +13,7 @@ class TicketDetailViewModel(ticketKey: Long) : ViewModel() {
     fun getTicket() = ticket
 
 //    init {
-//        ticket.addSource(database.getNightWithId(ticketKey), ticket::setValue)
+//        ticket.addSource(database.getTicketWithId(ticketKey), ticket::setValue)
 //    }
 
     private val _navigateToSleepTracker = MutableLiveData<Boolean?>()

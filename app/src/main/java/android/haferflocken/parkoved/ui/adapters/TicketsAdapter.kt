@@ -1,17 +1,12 @@
 package android.haferflocken.parkoved.ui.adapters
 
-import android.haferflocken.parkoved.R
-import android.haferflocken.parkoved.databinding.FragmentTicketsBinding
 import android.haferflocken.parkoved.databinding.ItemTicketsBinding
 import android.haferflocken.parkoved.models.Ticket
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 
 class TicketsAdapter(private val clickListener: TicketListener) :
     ListAdapter<Ticket, TicketViewHolder>(DiffCallback) {
@@ -55,5 +50,5 @@ class TicketViewHolder private constructor(private val binding: ItemTicketsBindi
 }
 
 class TicketListener(val clickListener: (sleepId: Long) -> Unit) {
-    fun onClick(ticket: Ticket) = clickListener(ticket.ticketId)
+    fun onClick(ticket: Ticket) = clickListener(ticket.tid)
 }

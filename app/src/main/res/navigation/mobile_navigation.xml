@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_maps"
-        android:name="android.haferflocken.parkoved.ui.maps.MapsdFragment"
+        android:name="android.haferflocken.parkoved.ui.maps.MapsFragment"
         android:label="@string/title_maps"
         tools:layout="@layout/fragment_maps" />
 
@@ -31,7 +31,7 @@
         android:id="@+id/navigation_profile"
         android:name="android.haferflocken.parkoved.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/profile_fragment" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/ticketDetailFragment"

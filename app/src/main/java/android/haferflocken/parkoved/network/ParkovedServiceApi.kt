@@ -2,13 +2,14 @@ package android.haferflocken.parkoved.network
 
 import android.haferflocken.parkoved.models.Ticket
 import android.haferflocken.parkoved.models.User
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ParkovedServiceApi {
 
     @POST("api/auth/request")
-    suspend fun authRequest(): String
+    suspend fun authRequest()
 
     @POST("api/auth/confirm")
     suspend fun authConfirm(): String

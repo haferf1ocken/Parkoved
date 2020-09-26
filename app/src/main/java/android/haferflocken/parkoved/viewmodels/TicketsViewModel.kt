@@ -1,11 +1,15 @@
 package android.haferflocken.parkoved.viewmodels
 
+import android.app.Application
 import android.haferflocken.parkoved.models.Ticket
+import android.haferflocken.parkoved.repository.ParkovedRepository
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 
-class TicketsViewModel : ViewModel() {
+class TicketsViewModel(application: Application) : AndroidViewModel(application) {
 
     private val attractions = listOf("Карусель", "Зона отдыха")
     private val validUntil = listOf("25/10/2020", "25/09/2020")
@@ -13,16 +17,30 @@ class TicketsViewModel : ViewModel() {
     private val workTime = listOf("10:00-20:00", "12:00-18:00")
     private val usage = listOf(1, 4)
 
-    private var _tickets = mutableListOf<Ticket>()
+    private val repository = ParkovedRepository.getInstance(application)
+
+    private val _tickets = MutableLiveData<List<Ticket>>()
+    val tickets: LiveData<List<Ticket>>
+        get() = _tickets
+
+    private var randomTickets = mutableListOf<Ticket>()
 
     fun fillTickets(): MutableList<Ticket> {
         for (i in 0L..5L) {
             val ticket =
                 Ticket(i, attractions.random(), validUntil.random(), ageRestriction.random(),
                     workTime.random(), usage.random())
-            _tickets.add(ticket)
+            randomTickets.add(ticket)
         }
-        return _tickets
+        return randomTickets
+    }
+
+//    init {
+//        getAllTickets()
+//    }
+
+    private fun getAllTickets() = viewModelScope.launch {
+        _tickets.value = repository.getTickets()
     }
 
     private val _navigateToTicketDataDetail = MutableLiveData<Long>()

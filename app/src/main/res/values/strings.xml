@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">Parkoved</string>
+    <string name="app_name">ПАРКОВЕД</string>
     <string name="title_events">События</string>
     <string name="title_maps">Карта</string>
     <string name="title_tickets">Билеты</string>
     <string name="profile">Профиль</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_profile">Профиль</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -1,12 +1,12 @@
 package android.haferflocken.parkoved.models
 
 data class Ticket(
-    var ticketId: Long = 0L,
-    val attraction: String = "",
-    val validUntil: String = "",
+    var tid: String? = null,
+    val service: String? = null,
+    val uses: Int? = null,
+    val isForChild: Boolean? = null,
+
     val ageRestriction: String = "",
-    val workTime: String = "",
-    val usage: Int = -1,
-    val colorName: String = "",
+    val expiresAt: Int = -1,
     val imageUrl: String = ""
 )

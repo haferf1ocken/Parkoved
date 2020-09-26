@@ -7,7 +7,7 @@ import androidx.databinding.BindingAdapter
 @BindingAdapter("ticketAttraction")
 fun TextView.setTicketAttraction(item: Ticket) {
     item.let {
-        text = item.attraction
+        text = item.service
     }
 }
 
@@ -28,13 +28,13 @@ fun TextView.setTicketAgeRestriction(item: Ticket) {
 @BindingAdapter("ticketWorkTime")
 fun TextView.setTicketWorkTime(item: Ticket) {
     item.let {
-        text = item.workTime
+        text = item.expiresAt
     }
 }
 
 @BindingAdapter("ticketUsage")
 fun TextView.setTicketUsage(item: Ticket) {
     item.let {
-        text = item.usage.toString()
+        text = item.uses.toString()
     }
 }
