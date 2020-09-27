@@ -49,6 +49,6 @@ class TicketViewHolder private constructor(private val binding: ItemTicketsBindi
     }
 }
 
-class TicketListener(val clickListener: (sleepId: Long) -> Unit) {
-    fun onClick(ticket: Ticket) = clickListener(ticket.tid)
+class TicketListener(val clickListener: (ticketId: Long) -> Unit) {
+    fun onClick(ticket: Ticket) = clickListener(ticket.ticketId)
 }

@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_navigation_tickets_to_ticketDetailFragment"
             app:destination="@id/ticketDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_tickets_to_navigation_maps"
+            app:destination="@id/navigation_maps" />
     </fragment>
 
     <fragment

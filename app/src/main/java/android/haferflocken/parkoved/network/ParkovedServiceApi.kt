@@ -24,5 +24,5 @@ interface ParkovedServiceApi {
     suspend fun getUser(): User
 
     @GET("api/tickets")
-    suspend fun getTickets(): List<Ticket>
+    suspend fun getTickets(): List<NetworkTicket>
 }
